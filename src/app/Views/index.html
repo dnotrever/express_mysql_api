@@ -11,46 +11,30 @@
 
     <div class="cadastro">
 
-        <label for="nome">Nome: </label>
-        <input name="nome" id="nome" type="text">
+        <label for="nome">Nome </label>
+        <input class="form" name="nome" id="nome" type="text">
 
-        <br><br>
+        <label for="preco">Preço </label>
+        <input class="form" name="preco" id="preco" type="text">
 
-        <label for="preco">Preço: </label>
-        <input name="preco" id="preco" type="text">
+        <label for="categoria">Categoria </label>
+        <input class="form" name="categoria" id="categoria" type="text">
 
-        <br><br>
+        <label for="quantidade">Quantidade </label>
+        <input class="form" class="form" name="quantidade" id="quantidade" type="text">
 
-        <label for="categoria">Categoria: </label>
-        <input name="categoria" id="categoria" type="text">
-
-        <br><br>
-
-        <label for="quantidade">Quantidade: </label>
-        <input name="quantidade" id="quantidade" type="text">
-
-        <br><br>
-
-        <label for="descricao">Descrição: </label>
-        <input name="descricao" id="descricao" type="text">
-
-        <br><br>
+        <label for="descricao">Descrição </label>
+        <input class="form" name="descricao" id="descricao" type="text">
 
         <button onclick="cadastrarProduto()">Cadastrar</button>
 
-        <br><br><br>
-
-        <div class="mensagem"></div>
-
     </div>
 
-    <br><br>
+    <div class="mensagem"></div>
 
     <div class="tabela_produtos">
 
         <button onclick="exibirProdutos()">Mostrar</button>
-
-        <br><br>
 
         <table id="tabela">
             <thead>
@@ -58,9 +42,10 @@
                     <th>Nome</th>
                     <th>Preço</th>
                     <th>Categoria</th>
-                    <th>Quantidade</th>
+                    <th>Qtd.</th>
                     <th>Descrição</th>
-                    <th>Deletar</th>
+                    <th>Remover</th>
+                    <th>Editar</th>
                 </tr>
             </thead>
             <tbody></tbody>

@@ -1,31 +1,108 @@
-body {
+* {
+    padding: 0;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 5rem;
 }
 
-#tabela {
-    text-align: center;
+
+/* Registro */
+
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1px;
+    padding: 2rem 2rem;
+    /* border: 3px solid red; */
 }
 
-td {
-    padding: .3rem 0;
+.cadastro input {
+    width: 25%;
+    margin-bottom: 1rem;
+    height: 1.2rem;
 }
 
-th {
-    padding: .2rem 2rem;
-    background-color: #DDD;
-}
-
-.delete {
-    color: rgb(126, 65, 65);
-    font-size: 2rem;
+.cadastro button {
+    margin-top: 1rem;
+    width: 6rem;
+    padding: .4rem 0;
     cursor: pointer;
 }
 
-.delete:hover {
-    color: red;
-}
+
+/* Mensagem */
 
 .mensagem {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 6rem;
+    padding-left: 2rem;
     font-size: 1.5rem;
+    /* border: 3px solid green; */
+}
+
+
+/* Tabela */
+
+.tabela_produtos {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    /* border: 3px solid blue; */
+}
+
+.tabela_produtos button {
+    margin-bottom: 2rem;
+    width: 6rem;
+    padding: .4rem 0;
+    cursor: pointer;
+}
+
+#tabela {
+    /* border: 3px solid orange; */
+    width: 95%;
+    text-align: center;
+}
+
+#tabela th {
+    background-color: #CCC;
+    padding: .8rem 0;
+    /* border: 3px solid black; */
+}
+
+#tabela th:nth-child(n+6) {
+    background-color: #FFF;
+    width: 1px;
+    padding: 0 .5rem;
+    /* border: 3px solid darkmagenta; */
+}
+
+#tabela td {
+    font-size: .9rem;
+    text-align: center;
+    align-items: center;
+    padding: 1rem 0;
+    /* border: 3px solid gray; */
+}
+
+#tabela input {
+    text-align: center;
+    width: 8rem;
+    height: 1.2rem;
+}
+
+#tabela td button {
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+#tabela .delete {
+    color: red;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+#tabela .edit {
+    font-weight: bold;
+    cursor: pointer;
 }
