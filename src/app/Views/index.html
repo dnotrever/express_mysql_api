@@ -5,51 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Produtos</title>
 </head>
 <body>
 
-    <div class="cadastro">
+    <div class="container">
 
-        <label for="nome">Nome </label>
-        <input class="form" name="nome" id="nome" type="text">
+        <div class="cadastro">
 
-        <label for="preco">Preço </label>
-        <input class="form" name="preco" id="preco" type="text">
+            <label for="nome">Nome </label>
+            <input class="form" name="nome" id="nome" type="text" placeholder="obrigatório">
 
-        <label for="categoria">Categoria </label>
-        <input class="form" name="categoria" id="categoria" type="text">
+            <label for="preco">Preço </label>
+            <input class="form" name="preco" id="preco" type="text" placeholder="obrigatório">
 
-        <label for="quantidade">Quantidade </label>
-        <input class="form" class="form" name="quantidade" id="quantidade" type="text">
+            <label for="categoria">Categoria </label>
+            <input class="form" name="categoria" id="categoria" type="text" placeholder="obrigatório">
 
-        <label for="descricao">Descrição </label>
-        <input class="form" name="descricao" id="descricao" type="text">
+            <label for="quantidade">Quantidade </label>
+            <input class="form" class="form" name="quantidade" id="quantidade" type="text" placeholder="obrigatório">
 
-        <button onclick="cadastrarProduto()">Cadastrar</button>
+            <label for="descricao">Descrição </label>
+            <input class="form" name="descricao" id="descricao" type="text" placeholder="opcional">
 
-    </div>
+            <button onclick="cadastrarProduto()">Cadastrar</button>
 
-    <div class="mensagem"></div>
+            <div class="mensagem"></div>
 
-    <div class="tabela_produtos">
+        </div>
 
-        <button onclick="exibirProdutos()">Mostrar</button>
+        <div class="tabela_produtos">
 
-        <table id="tabela">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Categoria</th>
-                    <th>Qtd.</th>
-                    <th>Descrição</th>
-                    <th>Remover</th>
-                    <th>Editar</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+            <button onclick="exibirProdutos()">Listar</button>
+
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Categoria</th>
+                        <th>Qtd.</th>
+                        <th>Descrição</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="msg_exibicao">Produtos ainda não foram exibidos</div>
+
+        </div>
 
     </div>
     

@@ -1,12 +1,11 @@
+const url = `http://localhost:${process.env.PORT}/produtos/`
 
-const url = 'http://localhost:3000/produtos/'
-
-const msg = document.querySelector('.mensagem')
+const msg_principal = document.querySelector('.mensagem')
+const msg_exebicao = document.querySelector('.msg_exibicao')
 
 async function cadastrarProduto() {
 
     const form = document.querySelectorAll('.form')
-
     const nomeElement = document.querySelector('#nome')
     const precoElement = document.querySelector('#preco')
     const categoriaElement = document.querySelector('#categoria')
@@ -15,9 +14,11 @@ async function cadastrarProduto() {
 
     if ((nomeElement.value && precoElement.value && categoriaElement.value && quantidadeElement.value) !== '') {
 
+        preco_format = (precoElement.value).toString().replace(',', '.')
+
         const produto = {
             nome: nomeElement.value,
-            preco: precoElement.value,
+            preco: Number(preco_format),
             categoria: categoriaElement.value,
             quantidade: quantidadeElement.value,
             descricao: descricaoElement.value,
@@ -42,7 +43,9 @@ async function cadastrarProduto() {
         }
 
     } else {
-        msg.innerHTML = 'Não é possível cadastrar produto!<br>Preencha todos os campos!'
+
+        msg_principal.innerHTML = 'Não é possível cadastrar produto!<br>Preencha os campos obrigatórios!'
+
     }
 
 }
@@ -56,7 +59,6 @@ async function exibirProdutos() {
     const response = await fetch(url)
 
     if (response.statusText === 'OK') {
-
         const dados = await response.json()
 
         dados.map(item => {
@@ -80,18 +82,24 @@ async function exibirProdutos() {
             linha.append(nome, preco, categoria, quantidade, descricao, deletar, editar)
 
             nome.innerHTML = item.nome
-            preco.innerHTML = item.preco
+            preco.innerHTML = item.preco.toFixed(2)
             categoria.innerHTML = item.categoria
             quantidade.innerHTML = item.quantidade
             descricao.innerHTML = item.descricao
 
             deletar.innerHTML = '×'
-            editar.innerHTML = 'E'
+            editar.innerHTML = '✎'
 
             corpo_tabela.appendChild(linha)
+
+            msg_exebicao.innerHTML = ''
+
         })
+
     } else {
+
         msg.innerHTML = 'Não há produtos cadastrados!'
+
     }
 
 }
@@ -103,7 +111,7 @@ async function excluirProduto(id) {
     await fetch(url + id, init)
 
     msg.innerHTML = 'Produto excluído com sucesso!'
-    
+
     exibirProdutos()
 
 }
