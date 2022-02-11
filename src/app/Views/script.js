@@ -1,4 +1,5 @@
-const url = `http://localhost:${process.env.PORT}/produtos/`
+// substitua por sua porta e nome da tabela mysql
+const url = `http://localhost:3000/produtos/`
 
 const msg_principal = document.querySelector('.mensagem')
 const msg_exebicao = document.querySelector('.msg_exibicao')
@@ -34,7 +35,7 @@ async function cadastrarProduto() {
 
         await fetch(url, init)
 
-        msg.innerHTML = 'Produto cadastrado com sucesso!'
+        msg_principal.innerHTML = 'Produto cadastrado com sucesso!'
 
         const forms = Array.from(form)
 
@@ -98,7 +99,7 @@ async function exibirProdutos() {
 
     } else {
 
-        msg.innerHTML = 'Não há produtos cadastrados!'
+        msg_principal.innerHTML = 'Não há produtos cadastrados!'
 
     }
 
@@ -110,7 +111,7 @@ async function excluirProduto(id) {
 
     await fetch(url + id, init)
 
-    msg.innerHTML = 'Produto excluído com sucesso!'
+    msg_principal.innerHTML = 'Produto excluído com sucesso!'
 
     exibirProdutos()
 
@@ -188,7 +189,7 @@ async function editarProduto(id) {
 
     await fetch(url + id, init)
 
-    msg.innerHTML = 'Produto editado com sucesso!'
+    msg_principal.innerHTML = 'Produto editado com sucesso!'
     
     exibirProdutos()
 
